@@ -1,0 +1,88 @@
+/*  CSS Variables  */
+:root {
+  --clr-primary: #ff6e7f;
+  --clr-secondary: #bfe9ff;
+  --clr-dark: #131313;
+  --radius-lg: 2rem;
+  --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-lg: 0 25px 45px rgba(0, 0, 0, 0.15);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Anuphan", sans-serif;
+  scroll-behavior: smooth;
+  background: var(--clr-secondary);
+}
+
+/*  HERO  */
+.hero {
+  min-height: 60vh;
+  background: linear-gradient(
+    135deg,
+    var(--clr-primary) 0%,
+    var(--clr-secondary) 100%
+  );
+  position: relative;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://d2aoxpkmy9bqkr.cloudfront.net/image_41_e22e3634f9.webp")
+    center/cover no-repeat fixed;
+  mix-blend-mode: overlay;
+  opacity: 0.15;
+}
+
+/*  CAT CARD  */
+.cat-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.cat-card img {
+  height: 16rem;
+  object-fit: cover;
+  transition: var(--transition);
+}
+.cat-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+.cat-card:hover img {
+  filter: brightness(0.9);
+}
+
+/*  MODAL  */
+.modal-content {
+  border-radius: var(--radius-lg);
+}
+.modal-header {
+  border-bottom: 0;
+}
+
+/*  FOOTER  */
+.footer-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--clr-primary) 0%,
+    var(--clr-secondary) 100%
+  );
+}
+
+/*  Scroll Reveal  */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
