@@ -16,7 +16,7 @@
     --transition: all 0.3s ease;
 }
 
-/* Base Styles */
+/* เบสของเว็บ */
 * {
     box-sizing: border-box;
 }
@@ -147,7 +147,7 @@ body {
     box-shadow: var(--card-shadow-hover);
 }
 
-/* Cat Breed Cards */
+/* การ์ดแม๊ว */
 .cat-card {
     background: white;
     border-radius: var(--border-radius);
@@ -257,7 +257,7 @@ body {
     font-weight: 500;
 }
 
-/* Consideration Cards */
+/* ตั้งค่าการ์ด */
 .icon-wrapper {
     width: 60px;
     height: 60px;
@@ -297,7 +297,7 @@ body {
     font-size: 1.1rem;
 }
 
-/* Scroll to Top Button */
+/* กลับไปข้างบร */
 .btn-scroll-top {
     position: fixed;
     bottom: 2rem;
@@ -328,7 +328,7 @@ body {
     box-shadow: var(--card-shadow-hover);
 }
 
-/* Animations */
+/* อนิเมชั่น */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -344,7 +344,7 @@ body {
     animation: fadeInUp 0.6s ease forwards;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
     .hero-section {
         min-height: 80vh;
@@ -409,7 +409,7 @@ body {
     }
 }
 
-/* Loading Animation */
+/* โหลดอนิเม */
 .loading {
     opacity: 0;
     transform: translateY(20px);
@@ -421,7 +421,7 @@ body {
     transform: translateY(0);
 }
 
-/* Custom Scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }

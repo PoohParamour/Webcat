@@ -1,4 +1,3 @@
-// Cat breeds data
 const catBreeds = [
     {
         name: "แมวโกนจา",
@@ -362,11 +361,11 @@ const catBreeds = [
     }
 ];
 
-// DOM elements
+// DOM 
 const catBreedsGrid = document.getElementById('cat-breeds-grid');
 const scrollToTopBtn = document.getElementById('scrollToTop');
 
-// Create cat breed card
+// สร้างการ์ดแม๊ว
 function createCatCard(cat, index) {
     const traits = cat.traits.map(trait => `<span class="trait-badge">${trait}</span>`).join('');
     
@@ -413,12 +412,12 @@ function createCatCard(cat, index) {
     `;
 }
 
-// Initialize cat breeds grid
+// ตารางสายพันธุ์แมว
 function initializeCatGrid() {
     const catCardsHTML = catBreeds.map((cat, index) => createCatCard(cat, index)).join('');
     catBreedsGrid.innerHTML = catCardsHTML;
     
-    // Trigger loading animation
+    // โหลดภาพเคลื่อนไหว
     setTimeout(() => {
         const cards = document.querySelectorAll('.cat-card.loading');
         cards.forEach((card, index) => {
@@ -430,7 +429,7 @@ function initializeCatGrid() {
     }, 100);
 }
 
-// Smooth scrolling for navigation links
+// สมูทตี้
 function initializeSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -450,7 +449,7 @@ function initializeSmoothScrolling() {
     });
 }
 
-// Scroll to top functionality
+// ไปบนสุด
 function initializeScrollToTop() {
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 300) {
@@ -468,7 +467,7 @@ function initializeScrollToTop() {
     });
 }
 
-// Navbar background change on scroll
+//เปลี่ยนแปลงพื้นหลัง
 function initializeNavbarScroll() {
     const navbar = document.querySelector('.navbar');
     
@@ -481,7 +480,7 @@ function initializeNavbarScroll() {
     });
 }
 
-// Intersection Observer for animations
+// อนิเมชั่น
 function initializeIntersectionObserver() {
     const observerOptions = {
         threshold: 0.1,
@@ -496,13 +495,12 @@ function initializeIntersectionObserver() {
         });
     }, observerOptions);
 
-    // Observe sections for animation
     document.querySelectorAll('section').forEach(section => {
         observer.observe(section);
     });
 }
 
-// Error handling for images
+// แจ้งเตือน
 function initializeImageErrorHandling() {
     document.addEventListener('error', (e) => {
         if (e.target.tagName === 'IMG') {
@@ -525,7 +523,7 @@ function initializeImageErrorHandling() {
     }, true);
 }
 
-// Initialize all functions when DOM is loaded
+// เริ่มเมื่อใช้ DOM
 document.addEventListener('DOMContentLoaded', () => {
     initializeCatGrid();
     initializeSmoothScrolling();
@@ -535,9 +533,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeImageErrorHandling();
 });
 
-// Handle window resize
+// ปรับขนาดจอ
 window.addEventListener('resize', () => {
-    // Recalculate any responsive elements if needed
     const cards = document.querySelectorAll('.cat-card');
     cards.forEach(card => {
         card.style.transition = 'none';
